@@ -18,11 +18,19 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
 
+	// 1. JPA: 자바 객체와 DB를 연결해주는 핵심 도구
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// 2. MySQL Driver: 자바가 MySQL 서버에 접속할 수 있게 해주는 접속기
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	// 3. Lombok: 코드를 줄여주는 도구 (Getter, Setter 자동 생성)
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	// 4. 웹 개발 기본 설정
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
 tasks.named('test') {
 	useJUnitPlatform()
 }
