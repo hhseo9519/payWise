@@ -22,7 +22,7 @@ public class Recommendation {
     private Member member; // 추천받는 사람
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "stock_id")
+    @JoinColumn(name = "stock_id") // pk인 칼럼을 가져올 때만 referecedColumnName을 쓰지 않아도 된다.
     private Stock stock;   // 추천 종목
 
     @Column(length = 1000)
