@@ -9,7 +9,7 @@ import paywise.Asset_Manager.member.entity.Member;
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long> {
     //파라미터에 member와 long이 있는데 이건 제네릭이다.
-    // 여기에 아무것도 안 적어도 기본 CRUD(저장, 조회, 삭제)는 이미 완성된 상태입니다.
+    // 여기에 아무것도 안 적어도 기본 CRUD(저장, 조회, 삭제)는 이미 완성된 상태입니다..
 
 
 }
