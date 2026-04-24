@@ -29,6 +29,10 @@ dependencies {
 	// 4. 웹 개발 기본 설정
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// Bean Validation 기능을 위한 스타터 (jakarta.validation 포함)
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	// Spring Security (암호화 및 인증/인가 담당)
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 }
 tasks.named('test') {
