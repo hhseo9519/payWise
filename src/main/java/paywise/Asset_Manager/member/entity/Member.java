@@ -23,6 +23,9 @@ public class Member {
     @Column(nullable = false) // 닉네임도 필수값으로 설정하는 것이 안전합니다.
     private String nickname;
 
+    @Column // 토큰은 로그아웃 시 null이 될 수 있으므로 nullable입니다.
+    private String refreshToken;
+
     // --- [자산 관련 필드 추가] ---
     @Column(nullable = false)
     private Long totalBalance;
@@ -51,5 +54,18 @@ public class Member {
      */
     public void updateBalance(Long amount) {
         this.totalBalance = amount;
+    }
+    /**
+     * 리프레시 토큰 업데이트 (로그인 시 호출)
+     */
+    public void updateRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
+    /**
+     * 로그아웃 (토큰 무력화)
+     */
+    public void logout() {
+        this.refreshToken = null;
     }
 }
